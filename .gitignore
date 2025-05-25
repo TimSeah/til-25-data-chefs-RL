@@ -1,0 +1,43 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.Python
+*.egg-info/
+pip-wheel-metadata/
+
+# Virtual environments
+.env
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints
+# This ensures .ipynb_checkpoints/ are ignored, but not your .ipynb files themselves
+.ipynb_checkpoints/
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store # macOS specific
+
+# OS generated files
+Thumbs.db # Windows specific
+ehthumbs.db # Windows specific
+
+# Build artifacts (if any)
+build/
+dist/
+*.o
+*.so
+
+# Any other general log files or temporary directories you might create
+# Example:
+# temp_outputs/
+# *.log # If you have .log files not covered by .tfevents LFS tracking

@@ -1,0 +1,5 @@
+docker kill data-chefs-rl:latest
+docker build -t data-chefs-rl:latest .
+docker run -p 5004:5004 -d data-chefs-rl:latest
+python ../test/test_rl.py
+til submit data-chefs-rl:latest
