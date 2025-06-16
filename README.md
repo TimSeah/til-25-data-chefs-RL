@@ -1,145 +1,51 @@
-# TIL-25 Data Chefs - Reinforcement Learning Challenge
+# Reinforcement Learning (RL) Challenge - Data Chefs @ TIL-25 Hackathon
 
-**Hackathon:** TIL-25 Hackathon
-**Team:** Data Chefs
-**Author:** lolkabash
+![RL Agent Preview](README%20Preview.gif)
 
-## 📖 Description
+This repository (`lolkabash/til-25-data-chefs-RL`) contains the code, models, and notebooks developed by the **Data Chefs** team for the Reinforcement Learning (RL) challenge of the DSTA BrainHack TIL-AI 2025. Our primary focus was on training an RL agent for autonomous navigation in the competition environment.
 
-This repository contains the solution for the Reinforcement Learning (RL) challenge as part of the TIL-25 Hackathon. The project focuses on training an RL agent to solve a specific task or environment. All development and experimentation were primarily conducted within Jupyter Notebooks.
+The work here primarily consists of Jupyter Notebooks, reflecting our iterative process of model development, training, and evaluation.
 
-## 💻 Technologies Used
+## 📝 Description
 
-*   **Jupyter Notebook:** Primary environment for RL agent development, training, and visualization.
-*   **Python:** Core programming language.
-*   **RL libraries/frameworks used: OpenAI Gym, Stable Baselines3, RLlib, PyTorch, TensorFlow.)**
-*   **Key Python libraries: NumPy, Pandas, Matplotlib.**
+The DSTA BrainHack TIL-AI 2025 RL challenge involved developing algorithms for a simulated robot to autonomously navigate an environment through trial-and-error learning. The environment featured a maze layout where teams competed as "Scout" or "Guard" in a round-robin format over four rounds.
 
-## ⚙️ Working Process & Solution
+## 🔗 Repository Link
 
-This section outlines the general steps taken to address the RL challenge.
+*   **This Repository:** [lolkabash/til-25-data-chefs-RL](https://github.com/lolkabash/til-25-data-chefs-RL)
+*   **Main Team Repository:** The overall project and other challenges were managed in our main team repository: [lolkabash/til-25-data-chefs](https://github.com/lolkabash/til-25-data-chefs)
 
-### 1. Environment Definition & Understanding
-*   **Environment Used:** (Describe the RL environment, e.g., a classic control problem from OpenAI Gym, a custom-built environment. Specify observation space, action space.)
-*   **Problem Formulation:** (Clearly define the goal of the RL agent.)
+## 💻 Key Technologies We Used
 
-### 2. Agent & Algorithm Selection
-*   **Algorithm Choice:** (Explain why a particular RL algorithm was chosen, e.g., Q-Learning, DQN, PPO, A2C, SAC. Justify based on the environment's characteristics - discrete/continuous action space, model-free/model-based.)
-*   **Agent Architecture:** (If a neural network was used for function approximation, describe its architecture - layers, activation functions.)
+*   **Python:** Primary programming language for implementing the RL algorithms.
+*   **Jupyter Notebooks:** Used extensively for model development, training, and evaluation.
+*   **PyTorch:** The deep learning framework used for building and training the neural networks.
+*   **Deep Q-Network (DQN):** The core RL algorithm. The Q-function was approximated using a Multi-Layer Perceptron (MLP) processing engineered visual and state features.
+*   **Prioritized Experience Replay (PER):** Implemented using a SumTree to sample more important transitions more frequently.
+*   **Epsilon-Greedy Exploration:** Used for action selection during training, with a decaying epsilon value.
+*   **Target Network & Double DQN:** Utilized to stabilize training and reduce Q-value overestimation.
+*   **Adam Optimizer:** Used for training the neural network.
+*   **Custom Reward Shaping:** Extensive, fine-grained reward structure to guide agent behavior.
+*   **`til_environment.gridworld`:** The custom game environment (from the `til-25-environment` submodule provided by the competition), adhering to a PettingZoo-like API for multi-agent interactions.
 
-### 3. Training Process
-*   **Environment Setup:** (Briefly mention the setup for running the notebooks and training.)
-*   **Hyperparameter Tuning:** (Key hyperparameters for the chosen algorithm, learning rate, discount factor (gamma), exploration strategy (e.g., epsilon-greedy), buffer size, batch size, update frequency.)
-*   **Reward Shaping:** (If applicable, describe any reward shaping techniques used to guide the agent.)
-*   **Training Iterations & Convergence:** (How long was the agent trained? Any observations about convergence or learning stability?)
-*   **Challenges Faced:** (Any significant challenges during training, e.g., sparse rewards, unstable learning, and how they were addressed.)
+## ✨ Our Solution & Key Achievements
+Our approach to the RL challenge was highly iterative, as reflected in the various experimental "Attempts" and notebooks within this repository (e.g., "Attempt 1 MARL PPO", "Attempt 2 MLP No Reward", "Attempt 5 CNN DQN"). This process of experimentation with different architectures (MLP, CNN concepts), reward structures, and training methodologies culminated in our final model, documented as "Attempt 10 CNN DQN With Checkpoints."
 
-### 4. Evaluation
-*   **Metrics Used:** (How was the agent's performance measured? E.g., cumulative reward, episode length, success rate.)
-*   **Evaluation Protocol:** (How many episodes were run for evaluation? Was it on a separate test environment or using a deterministic policy?)
-*   **Performance Visualizations:** (E.g., learning curves showing reward over episodes/timesteps.)
+The core of this final agent was a Deep Q-Network (DQN) with the following key characteristics:
 
-### 5. Results & Key Findings
-*   **Final Agent Performance:** (Summarize the best performance achieved by the agent.)
-*   **Insights:** (Any interesting behaviors learned by the agent or insights from the training process.)
-*   **(Consider adding GIFs or videos of the trained agent interacting with the environment if possible.)**
-
-## 🚀 Setup and Usage
-
-### Prerequisites
-*   Python (version, e.g., 3.8+)
-*   Jupyter Notebook/JupyterLab
-*   (List other major dependencies, e.g., specific versions of RL libraries)
-
-### Installation
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/lolkabash/til-25-data-chefs-RL.git
-    cd til-25-data-chefs-RL
-    ```
-2.  Install dependencies:
-    *(Provide instructions, e.g., using pip)*
-    ```bash
-    pip install -r requirements.txt
-    ```
-    *(Or if you used Conda)*
-    ```bash
-    # conda env create -f environment.yml
-    # conda activate your_env_name
-    ```
-
-### Running the Notebooks
-*   Launch Jupyter Notebook or JupyterLab:
-    ```bash
-    jupyter notebook
-    # or
-    # jupyter lab
-    ```
-*   Navigate to the main notebook(s) that demonstrate the RL agent's training and evaluation.
-    *(List the key notebooks and their purpose, e.g., `RL_Agent_Training.ipynb`, `Evaluate_Agent.ipynb`)*
-
-## 📁 File Structure (Optional - Example)
-
-```
-til-25-data-chefs-RL/
-├── notebooks/                  # All Jupyter notebooks for the RL challenge
-│   ├── 01_environment_setup.ipynb
-│   ├── 02_agent_training.ipynb
-│   └── 03_evaluation.ipynb
-├── src/                        # (Optional) Any utility Python scripts or custom environment code
-├── data/                       # (Optional) Data for custom environments or saved agent policies/weights
-├── .gitignore
-└── README.md
-```
-*(Adjust the file structure to match your actual repository layout.)*
-
-## 🙏 Acknowledgements (Optional)
-*   Mention any RL frameworks, environments, or research papers that inspired your work.
-
-# RL
-
-Your RL challenge is to direct your agent through the game map while interacting with other agents and completing challenges.
-
-This Readme provides a brief overview of the interface format; see the Wiki for the full [challenge specifications](https://github.com/til-ai/til-25/wiki/Challenge-specifications).
-
-## Input
-
-The input is sent via a POST request to the `/rl` route on port `5004`. It is a JSON object structured as such:
-
-```JSON
-{
-  "instances": [
-    {
-      "observation": {
-        "viewcone": [[0, 0, ..., 0], [0, 0, ..., 0], ... , [0, 0, ..., 0]],
-        "direction": 0,
-        "location": [0, 0],
-        "scout": 0,
-        "step": 0
-      }
-    }
-  ]
-}
-```
-
-The observation is a representation of the inputs the agent senses in its environment. See the [challenge specifications](https://github.com/til-ai/til-25/wiki/Challenge-specifications) to learn how to interpret the observation.
-
-The length of the `instances` array is 1.
-
-During evaluation for Qualifiers, a GET request will be sent to the `/reset` route to signal that a round has ended, all agents are being reset to their starting positions (possibly with new roles), and any persistent state information your code may have stored must be cleared.
-
-### Output
-
-Your route handler function must return a `dict` with this structure:
-
-```Python
-{
-    "predictions": [
-        {
-            "action": 0
-        }
-    ]
-}
-```
-
-The action is an integer representing the next movement your agent intends to take. See the [challenge specifications](https://github.com/til-ai/til-25/wiki/Challenge-specifications) for a list of possible movements.
+*   **Model Architecture:** The DQN employed a Multi-Layer Perceptron (MLP) with multiple hidden layers (256 units each) to approximate Q-values. While named "CNN DQN" in our attempts (referring to the visual nature of the input), the network processed a 288-dimensional feature vector carefully engineered from the game state, rather than raw pixels. This feature vector included:
+    *   A processed representation of the agent's 7x5 viewcone (8 features per tile).
+    *   One-hot encoded agent direction.
+    *   Normalized agent location (x, y coordinates).
+    *   A binary indicator for the Scout role.
+    *   The normalized current step count within the episode.
+*   **Advanced Training Techniques:**
+    *   **Prioritized Experience Replay (PER):** We implemented PER (using a SumTree) to enable the agent to learn more efficiently by focusing on surprising or significant experiences.
+    *   **Double DQN:** To reduce overestimation of Q-values and improve stability, the target Q-values were calculated using the policy network to select the best next action and the target network to evaluate that action.
+    *   **Epsilon-Greedy Exploration:** An epsilon-greedy strategy was used for action selection during training, with epsilon decaying from an initial value of 0.25 down to 0.01.
+    *   **Resumable Training with Checkpoints:** The agent was designed to save and load model checkpoints (`.pth` files). This was crucial for enabling long-duration training sessions that could be resumed, facilitating continuous improvement throughout the hackathon (as seen in "Attempt 9 CNN DQN Resume Training" and "Attempt 10 CNN DQN With Checkpoints").
+*   **Customized Reward System (`CUSTOM_REWARDS_DICT`):** A detailed reward structure was critical for guiding agent behavior. This included:
+    *   Significant positive rewards for achieving Scout objectives (mission completion, recon, survival).
+    *   Large negative penalties for critical failures (Scout captured, wall collisions, agent collisions).
+    *   Small penalties per step (time penalty) and for stationary behavior to encourage efficient movement. This tailored reward system (explored in attempts like "Attempt 6 Agent 03 Reward") allowed for differentiated training signals for agents playing as Scout or Guard.
+*   **Iterative Refinement:** The final model was the product of extensive experimentation. Early attempts explored concepts like MARL PPO ("Attempt 1") and simpler MLP/DQN versions ("Attempt 2", "Attempt 4", "Attempt 5"). We also experimented with different agent training strategies ("Attempt 7 CNN DQN Train All Agents Simultaneously", "Attempt 8 CNN DQN Train Seperate Agents") and reward designs ("Attempt 3 Guard DQNV2") before arriving at the configuration in "Attempt 10". This iterative process allowed us to fine-tune hyperparameters (learning rate, buffer size, update frequencies) and the overall agent design for optimal performance.
