@@ -2,7 +2,7 @@
 
 ![RL Agent Preview](README%20Preview.gif)
 
-This repository (`lolkabash/til-25-data-chefs-RL`) contains the code, models, and notebooks developed by the **Data Chefs** team for the Reinforcement Learning (RL) challenge of the DSTA BrainHack TIL-AI 2025. Our primary focus was on training an RL agent for autonomous navigation in the competition environment.
+This repository (`TimSeah/til-25-data-chefs-RL`) contains the code, models, and notebooks developed by the **Data Chefs** team for the Reinforcement Learning (RL) challenge of the DSTA BrainHack TIL-AI 2025. Our primary focus was on training an RL agent for autonomous navigation in the competition environment.
 
 The work here primarily consists of Jupyter Notebooks, reflecting our iterative process of model development, training, and evaluation.
 
@@ -12,8 +12,8 @@ The DSTA BrainHack TIL-AI 2025 RL challenge involved developing algorithms for a
 
 ## 🔗 Repository Link
 
-*   **This Repository:** [lolkabash/til-25-data-chefs-RL](https://github.com/lolkabash/til-25-data-chefs-RL)
-*   **Main Team Repository:** The overall project and other challenges were managed in our main team repository: [lolkabash/til-25-data-chefs](https://github.com/lolkabash/til-25-data-chefs)
+*   **This Repository:** [TimSeah/til-25-data-chefs-RL](https://github.com/TimSeah/til-25-data-chefs-RL)
+*   **Main Team Repository:** The overall project and other challenges were managed in our main team repository: [TimSeah/til-25-data-chefs](https://github.com/TimSeah/til-25-data-chefs)
 
 ## 💻 Key Technologies We Used
 
